@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body{
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.banner{
+  background-image: url(../img/bannerMini.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+}
+
+.TituloBanner h1{
+  color: white;
+  text-shadow: 50px;
+  font-family: "Pacifico", cursive;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.TituloBanner p{
+  color: white;
+  text-shadow: 50px;
+  font-family: 'Segoe UI';
+  font-weight: lighter;
+  font-style: normal;
+}
+
+.nav{
+  background-color: #2b824b;
+}
+
+.nav a{
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1px;
+  font-weight: 500;
+}
+
+.ImagenSuperior{
+  text-align: center;
+}
+
+
+main{
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: #e8f0de;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+footer {
+  background-color: #2b824b;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+footer a{
+  color: white;
+  margin-top: auto;
+}
+
+.Titular h2 {
+  color: #2b824b;
+  font-weight: bold;
+  font-size: 1.8rem;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.Titular p{
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+h3 {
+  color: #277a6c !important;
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+.card{
+  width: 18rem;
+}
+
