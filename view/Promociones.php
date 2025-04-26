@@ -12,7 +12,7 @@
         <center><hr width="30%"></center>
     </div>
 
-    <div class="row row-cols-3 d-flex justify-content-center" style="text-align: center;">
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 d-flex justify-content-center" style="text-align: center;">
     <?php
         foreach ($data as $key => $value) {         
             foreach ($value as $promocion) {               
