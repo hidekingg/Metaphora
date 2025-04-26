@@ -7,6 +7,14 @@ if (isset($_GET['i'])):
             indexcontroller::{$metodo}();
     endif;
 else:
+
+    if(isset($_GET['p'])){
+        $metodo=$_GET['p'];
+        if(method_exists('promocionescontroller',$metodo)){
+            promocionescontroller::{$metodo}();
+        }   
+    }
+
     indexcontroller::index();
 endif;
 

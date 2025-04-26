@@ -14,6 +14,8 @@ class indexcontroller{
 
     public static function Promociones()
     {
+        $indexmodel=new Promociones();
+        $data = $indexmodel->mostrarUltimosPromociones();
         require_once("view/Promociones.php");
     }
 

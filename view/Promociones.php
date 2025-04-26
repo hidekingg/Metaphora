@@ -12,26 +12,22 @@
         <center><hr width="30%"></center>
     </div>
 
-    <table align="center">
-        <tr>
-            <td style="width: 50%;">
-                <div class="card" style="width: 18rem;">
-                    <img src="view/img/promomini1.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text"><b>Hasta 6 Meses sin intereses con pagando con PayPal.</b></p>
-                    </div>
-                </div>
-            </td>
-            <td style="width: 50%;">
-                <div class="card" style="width: 18rem;">
-                    <img src="view/img/promomini2.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text"><b>Descuento del 30% en reservaciones anticipadas.</b></p>
-                    </div>
-                </div>
-            </td>
-        </tr>
-    </table>
+    <div class="row row-cols-3 d-flex justify-content-center" style="text-align: center;">
+    <?php
+        foreach ($data as $key => $value) {         
+            foreach ($value as $promocion) {               
+                echo '<div class="col d-flex justify-content-center">';
+                echo '<div class="card" style="width: 18rem;">';
+                echo '<img src="'.$promocion['ImagenPromocion'].'" class="card-img-top" alt="...">';
+                echo '<div class="card-body">';
+                echo '<p class="card-text"><b>'.$promocion['Condiciones'].'</b></p>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            }           
+        }
+    ?>
+    </div>
 
 </main>
 
