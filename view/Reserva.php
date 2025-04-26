@@ -2,80 +2,102 @@
 <!--Espacio para el Header, no tocar-->
 
 <main>
-    </table>
-    <table width="100%" cellspacing="20">
-        <tr>
-            <td width="50%" align="center">
-                <h3>A donde vas a viajar?</h3>
-                <table width="85%" border="1">
-                    <tr>
-                        <td align="center"><b>viaje redondo</b></td>
-                        <td align="center"><b>viaje redondo</b></td>
-                    </tr>
-                </table>
-                <form action="#" method="post">
-                    <table>
-                        <tr>
-                            <td><input type="text" size="35"></td>
-                            <td align="center">↔</td>
-                            <td><input type="text" size="35"></td>
-                        </tr>
-                        <tr>
-                            <td align="center">origen</td>
-                            <td></td>
-                            <td align="center">seleccione un destino</td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" size="35"> <img src="view/img/calendario.jpg" width="20" height="20"></td>
-                            <td></td>
-                            <td><input type="text" size="35"> <img src="view/img/calendario.jpg" width="20" height="20"></td>
-                        </tr>
-                        <tr>
-                            <td align="center">salida</td>
-                            <td></td>
-                            <td align="center">regreso</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <select>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                </select>
-                                <option>pasajeros</option>
-                            </td>
-                            
-                            <td></td>
-                            <td><input type="text" size="35"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" align="center"><small>¿Tienes un código de promoción? (Opcional)</small></td>
-                        </tr>
-                        <tr>
-                            <td colspan="3" align="center">
-                                <small><a href="index.php?i=Promociones">ver promociones disponibles</a></small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" align="center">
-                                <input type="submit" value="BUSCAR">
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-            </td>
-            <td width="50%" align="center">
-                <img src="view/img/turismo.webp" width="500" height="300" alt="turismo">
-                <br>
-                <table width="30%">
-                    <tr>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-    </main>
+
+    <div class="container" style="text-align: center; margin-bottom: 2%;">
+        <img src="view/img/BannerMini.png" alt="..." width="70%">
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <h2 class="form-title" style="color:  #2b824b;">Reserva tu Viaje</h2>
+            <form id="reservaForm">
+                <div class="row">
+                    <!-- Origen -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="origen" class="form-label">Terminal de Salida</label>
+                            <select class="form-select" id="origen" required>
+                                <option value="" selected disabled>Seleccione origen</option>
+                                <option value="terminal_norte">Terminal Norte</option>
+                                <option value="terminal_sur">Terminal Sur</option>
+                                <option value="terminal_este">Terminal Este</option>
+                                <option value="terminal_oeste">Terminal Oeste</option>
+                                <option value="terminal_centro">Terminal Centro</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Destino -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="destino" class="form-label">Destino</label>
+                            <select class="form-select" id="destino" required>
+                                <option value="" selected disabled>Seleccione destino</option>
+                                <option value="ciudad_a">Ciudad A</option>
+                                <option value="ciudad_b">Ciudad B</option>
+                                <option value="ciudad_c">Ciudad C</option>
+                                <option value="ciudad_d">Ciudad D</option>
+                                <option value="ciudad_e">Ciudad E</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <!-- Fecha -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="fecha" class="form-label">Fecha del Viaje</label>
+                            <input type="date" class="form-control" id="fecha" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Clase -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="clase" class="form-label">Clase del Autobús</label>
+                            <select class="form-select" id="clase" required>
+                                <option value="" selected disabled>Seleccione clase</option>
+                                <option value="economica">Económica</option>
+                                <option value="ejecutiva">Ejecutiva</option>
+                                <option value="premium">Premium</option>
+                                <option value="cama">Cama</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Horarios  -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="horario" class="form-label">Horario</label>
+                            <select class="form-select" id="horario" disabled required>
+                                <option value="" selected disabled>Seleccione primero origen, destino y fecha</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Asientos -->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="asiento" class="form-label">Seleccionar Asiento</label>
+                            <select class="form-select" id="asiento" disabled required>
+                                <option value="" selected disabled>Seleccione primero el horario</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Botón de confirmación -->
+                <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-success btn-lg" id="confirmarBtn">Confirmar Viaje</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</main>
 
 <!--Espacio para el Footer, no tocar-->
 <?php require("layout/footer.php"); ?>
