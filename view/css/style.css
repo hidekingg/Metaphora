@@ -2,6 +2,9 @@
 
 body{
   background-color: rgb(255, 255, 255) !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .container img{
@@ -20,6 +23,25 @@ body{
   font-style: normal;
 }
 
+.parrafos h5{
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: left;
+  font-style: normal;
+}
+
+.parrafos li{
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 3%;
+  margin-top: 2%;
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
 .LogoSup{
   margin-left: 2%;
   margin-top: 2%;
@@ -31,6 +53,7 @@ body{
   align-content: center;
   justify-content: center;
   background-color: #243524!important;
+  margin-top: 0;
 }
 
 .banner{
@@ -129,7 +152,11 @@ footer a{
   text-align: center;
 }
 
-h3 {
+.parrafos h3 {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 3%;
+  margin-top: 2%;
   color: #277a6c !important;
   font-size: 1.4rem;
   margin-top: 1.5rem;

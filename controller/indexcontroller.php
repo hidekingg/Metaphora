@@ -21,6 +21,8 @@ class indexcontroller{
 
     public static function Reserva()
     {
+        $indexmodel=new Terminales();
+        $data = $indexmodel->mostrarTerminales();
         require_once("view/Reserva.php");
     }
 
@@ -31,7 +33,27 @@ class indexcontroller{
 
     public static function Atencion()
     {
-        require_once("view/Atencion.php");
+        require_once("view/Ayuda/Atencion.php");
+    }
+    public static function Marcas()
+    {
+        require_once("view/Ayuda/Marcas.php");
+    }
+    public static function AcercaDe()
+    {
+        require_once("view/Ayuda/AcercaDe.php");
+    }
+    public static function MetodosDePago()
+    {
+        require_once("view/Ayuda/MetodosDePago.php");
+    }
+    public static function AvisoPrivacidad()
+    {
+        require_once("view/Ayuda/AvisoPrivacidad.php");
+    }
+    public static function TerminosYCondiciones()
+    {
+        require_once("view/Ayuda/TerminosYCondiciones.php");
     }
 }
 ?>

@@ -1,4 +1,4 @@
-<?php require("layout/header.php"); ?>
+<?php require("view/layout/header.php"); ?>
 <!--Espacio para el Header, no tocar-->
 
 <main>
@@ -7,6 +7,8 @@
         <img src="view/img/BannerMini.png" alt="..." width="70%">
     </div>
 
+    <center>
+    <div style="width: 70%; text-align: left;">
     <div class="card-header bg-primary text-white">
         <h2 class="text-center" style="background-color: #2b824b;">Formulario de Atención</h2>
     </div>
@@ -44,8 +46,9 @@
             </div>
         </form>
     </div> 
-    
+    </div></center>
+
 </main>
 
 <!--Espacio para el Footer, no tocar-->
-<?php require("layout/footer.php"); ?>
+<?php require("view/layout/footer.php"); ?>

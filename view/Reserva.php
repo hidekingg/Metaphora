@@ -7,95 +7,117 @@
         <img src="view/img/BannerMini.png" alt="..." width="70%">
     </div>
 
-    <div class="container">
-        <div class="form-container">
-            <h2 class="form-title" style="color:  #2b824b;">Reserva tu Viaje</h2>
-            <form id="reservaForm">
-                <div class="row">
-                    <!-- Origen -->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="origen" class="form-label">Terminal de Salida</label>
-                            <select class="form-select" id="origen" required>
-                                <option value="" selected disabled>Seleccione origen</option>
-                                <option value="terminal_norte">Terminal Norte</option>
-                                <option value="terminal_sur">Terminal Sur</option>
-                                <option value="terminal_este">Terminal Este</option>
-                                <option value="terminal_oeste">Terminal Oeste</option>
-                                <option value="terminal_centro">Terminal Centro</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <!-- Destino -->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="destino" class="form-label">Destino</label>
-                            <select class="form-select" id="destino" required>
-                                <option value="" selected disabled>Seleccione destino</option>
-                                <option value="ciudad_a">Ciudad A</option>
-                                <option value="ciudad_b">Ciudad B</option>
-                                <option value="ciudad_c">Ciudad C</option>
-                                <option value="ciudad_d">Ciudad D</option>
-                                <option value="ciudad_e">Ciudad E</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <!-- Fecha -->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="fecha" class="form-label">Fecha del Viaje</label>
-                            <input type="date" class="form-control" id="fecha" required>
-                        </div>
-                    </div>
-                    
-                    <!-- Clase -->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="clase" class="form-label">Clase del Autobús</label>
-                            <select class="form-select" id="clase" required>
-                                <option value="" selected disabled>Seleccione clase</option>
-                                <option value="economica">Económica</option>
-                                <option value="ejecutiva">Ejecutiva</option>
-                                <option value="premium">Premium</option>
-                                <option value="cama">Cama</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Horarios  -->
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="horario" class="form-label">Horario</label>
-                            <select class="form-select" id="horario" disabled required>
-                                <option value="" selected disabled>Seleccione primero origen, destino y fecha</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <!-- Asientos -->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="asiento" class="form-label">Seleccionar Asiento</label>
-                            <select class="form-select" id="asiento" disabled required>
-                                <option value="" selected disabled>Seleccione primero el horario</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Botón de confirmación -->
-                <div class="d-grid gap-2 mt-4">
-                    <button type="submit" class="btn btn-success btn-lg" id="confirmarBtn">Confirmar Viaje</button>
-                </div>
-            </form>
-        </div>
+    <div class="Titular">
+        <h2>¿A dónde te vamos a llevar?</h2>
     </div>
+    
+    
+
+    <form id="searchForm" action="procesar_busqueda.php" method="POST" class="search-form">
+        <!-- Tipo de viaje -->
+        <div class="form-group">
+            <label for="tipo-viaje">Tipo de viaje</label>
+            <select id="tipo-viaje" name="tipo_viaje">
+                <option value="1">Directo</option>
+                <option value="2">Redondo</option>
+            </select>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Selector de pasajeros desplegable -->
+        <div class="form-group passenger-selector">
+            <label>Pasajeros</label>
+            <div class="passenger-trigger" id="passengerTrigger">
+                <span class="passenger-trigger-text" id="passengerSummary">0 pasajeros</span>
+                <span>▼</span>
+            </div>
+            
+            <div class="passenger-dropdown" id="passengerDropdown">
+                <div class="passenger-type">
+                    <div class="passenger-label">
+                        Adulto(s)
+                        <small>Más de 12 años</small>
+                    </div>
+                    <div class="passenger-count">
+                        <button type="button" class="passenger-btn minus" data-type="adultos">-</button>
+                        <span class="passenger-value" id="adultos-value">0</span>
+                        <button type="button" class="passenger-btn plus" data-type="adultos">+</button>
+                        <input type="hidden" id="adultos" name="adultos" value="0">
+                    </div>
+                </div>
+                
+                <div class="passenger-type">
+                    <div class="passenger-label">
+                        Niño(s)
+                        <small>5 a 12 años</small>
+                    </div>
+                    <div class="passenger-count">
+                        <button type="button" class="passenger-btn minus" data-type="ninos">-</button>
+                        <span class="passenger-value" id="ninos-value">0</span>
+                        <button type="button" class="passenger-btn plus" data-type="ninos">+</button>
+                        <input type="hidden" id="ninos" name="ninos" value="0">
+                    </div>
+                </div>
+                
+                <div class="passenger-type">
+                    <div class="passenger-label">
+                        INAPAM
+                        <small>Con credencial vigente</small>
+                    </div>
+                    <div class="passenger-count">
+                        <button type="button" class="passenger-btn minus" data-type="inapam">-</button>
+                        <span class="passenger-value" id="inapam-value">0</span>
+                        <button type="button" class="passenger-btn plus" data-type="inapam">+</button>
+                        <input type="hidden" id="inapam" name="inapam" value="0">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <!-- Origen y Destino -->
+        <div class="form-group">
+            <label for="origen">Origen</label>
+            <select id="origen" name="origen" required>
+                <option value="">Desde donde viajas</option>
+                <?php
+                // Terminales Opciones
+                foreach ($data as $key => $value) {         
+                    foreach ($value as $terminal) {               
+                        echo '<option value="'.$terminal["IdTerminal"].'">'.$terminal["Nombre"].'</option>';
+                    }           
+                }
+                ?>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="destino">Destino</label>
+            <select id="destino" name="destino" required>
+                <option value="">Hacia donde viajas</option>
+                <?php
+                // Terminales Opciones
+                foreach ($data as $key => $value) {         
+                    foreach ($value as $terminal) {               
+                        echo '<option value="'.$terminal["IdTerminal"].'">'.$terminal["Nombre"].'</option>';
+                    }           
+                }
+                ?>
+            </select>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <!-- Fecha -->
+        <div class="form-group">
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" name="fecha" required>
+        </div>
+        <br>
+        <button type="submit" class="search-btn">Buscar Viaje</button>
+    </form>
 
 </main>
 

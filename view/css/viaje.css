@@ -1,0 +1,124 @@
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+}
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+select, input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.passenger-selector {
+    position: relative;
+}
+.passenger-trigger {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.passenger-trigger-text {
+    font-size: 14px;
+}
+.passenger-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 280px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-top: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 100;
+    display: none;
+}
+.passenger-dropdown.show {
+    display: block;
+}
+.passenger-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.passenger-type:last-child {
+    margin-bottom: 0;
+}
+.passenger-label {
+    font-size: 14px;
+}
+.passenger-label small {
+    display: block;
+    color: #666;
+    font-size: 12px;
+}
+.passenger-count {
+    display: flex;
+    align-items: center;
+}
+.passenger-btn {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.passenger-btn:hover {
+    background-color: #eee;
+}
+.passenger-value {
+    margin: 0 10px;
+    min-width: 20px;
+    text-align: center;
+}
+.search-btn {
+    background-color: #106d1c;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    height: 40px;
+    transition: background-color 0.3s;
+}
+.search-btn:hover {
+    background-color: #76be88;
+}
+.divider {
+    border-left: 1px solid #ccc;
+    height: 60px;
+    margin: 0 10px;
+}

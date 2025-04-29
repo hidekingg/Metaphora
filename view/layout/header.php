@@ -5,10 +5,12 @@
     <title>Metaphora</title>
     <link rel="stylesheet" href="view/css/style.css">
     <link rel="stylesheet" href="view/css/EsModal.css">
+    <link rel="stylesheet" href="view/css/viaje.css">
     <link rel="stylesheet" type="text/css" href="view/Boostrap/bootstrap.min.css">
     <script type="text/javascript" src="view/Boostrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="view/Boostrap/js/bootstrap.bundle.min.js"></script>
     <script defer src="view/js/main.js"></script>
+    <script defer src="view/js/viaje.js"></script>
     <link rel="icon" href="view/img/logo.ico">
 </head>
 <body>
@@ -40,9 +42,18 @@
                         <li><a class="dropdown-item" href="#">Buscar viaje</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?i=Atencion">Atención</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Ayuda
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="index.php?i=Atencion">Atención</a></li>
+                        <li><a class="dropdown-item" href="index.php?i=Marcas">Marcas</a></li>
+                        <li><a class="dropdown-item" href="index.php?i=AcercaDe">Acerca de Metaphora</a></li>
+                        <li><a class="dropdown-item" href="index.php?i=MetodosDePago">Metodos de pago</a></li>
+                    </ul>
                 </li>
+
                 <li class="nav-item">
                     <!-- Botón que abre el modal de login -->
                     <button id="openLoginModalBtn" class="btn btn-light"><b>Iniciar&nbsp;sesión</b></button>

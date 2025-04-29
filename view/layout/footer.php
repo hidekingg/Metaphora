@@ -1,18 +1,19 @@
 <!--------------------------------------------------------------------------------------------------->
 <!--Footer actualizado 2.0-->
+
 <footer>
     <table width="100%">
         <tbody>
             <tr>
                 <td style="width: 25%;">
                     <b>Necesita ayuda Contactanos</b>
-                    <p>Linea: 9616385018 <br>Correo: <a href="mailto:methaphora@gmail.com">methaphora@gmail.com</a></p>
+                    <p>Linea: 9611063428 <br>Correo: <a href="mailto:metaphora.ayuda@gmail.com">metaphora.ayuda@gmail.com</a></p>
                 </td>
                 <td style="width: 25%;">
                     <b>Nosotros te ayudamos</b><br>
-                    <a href="#">Métodos de pago</a><br>
-                    <a href="#">Aviso de privacidad</a><br>
-                    <a href="#">Términos y condiciones</a><br>
+                    <a href="index.php?i=MetodosDePago">Métodos de pago</a><br>
+                    <a href="index.php?i=AvisoPrivacidad">Aviso de privacidad</a><br>
+                    <a href="index.php?i=TerminosYCondiciones">Términos y condiciones</a><br>
                 </td>
                 <td style="width: 25%;">
                     <b>Redes sociales</b>
@@ -28,7 +29,7 @@
                                 <a href="#"><img src="view/img/Tiktok.png" width="30" height="30" alt="Tiktok"></a>
                             </td>
                             <td>
-                                <a href="#"><img src="view/img/whatsApp.png" width="30" height="30" alt="whatsApp"></a>
+                                <a href="https://wa.me/5219611063428"><img src="view/img/whatsApp.png" width="30" height="30" alt="whatsApp"></a>
                             </td>
                         </tr>
                     </table>
