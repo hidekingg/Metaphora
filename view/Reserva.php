@@ -13,7 +13,7 @@
     
     
 
-    <form id="searchForm" action="procesar_busqueda.php" method="POST" class="search-form">
+    <form id="searchForm" action="" class="search-form">
         <!-- Tipo de viaje -->
         <div class="form-group">
             <label for="tipo-viaje">Tipo de viaje</label>
@@ -116,7 +116,8 @@
             <input type="date" id="fecha" name="fecha" required>
         </div>
         <br>
-        <button type="submit" class="search-btn">Buscar Viaje</button>
+        <input type="submit" class="btn btn-success" value="Buscas viaje">
+        <input type="hidden" name="i" value="MandarViajes">
     </form>
 
 </main>

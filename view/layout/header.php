@@ -12,9 +12,14 @@
     <script defer src="view/js/main.js"></script>
     <script defer src="view/js/viaje.js"></script>
     <link rel="icon" href="view/img/logo.ico">
+    <?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    ?>
 </head>
 <body>
-
+    
     <header>
 
     <nav class="navbar navbar-expand">
@@ -37,7 +42,7 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Viajes
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="index.php?i=Reserva">Reservar</a></li>
                         <li><a class="dropdown-item" href="#">Buscar viaje</a></li>
                     </ul>
@@ -46,7 +51,7 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Ayuda
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="index.php?i=Atencion">Atención</a></li>
                         <li><a class="dropdown-item" href="index.php?i=Marcas">Marcas</a></li>
                         <li><a class="dropdown-item" href="index.php?i=AcercaDe">Acerca de Metaphora</a></li>
@@ -54,9 +59,31 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                    <!-- Botón que abre el modal de login -->
-                    <button id="openLoginModalBtn" class="btn btn-light"><b>Iniciar&nbsp;sesión</b></button>
+                <li class="nav-item dropdown">
+
+                <?php      
+                           
+                    if(isset($_SESSION["IdUsuario"])){
+                        if($_SESSION["IdUsuario"]==0){
+                        echo '<button id="openLoginModalBtn" class="btn btn-light"><b>Iniciar&nbsp;sesión</b></button>';
+                        }
+                        else{
+                                echo'<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">';
+                                echo'<img src="'.$_SESSION['FotoPerfil'].'" alt="Perfil" class="profile-img" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">';
+                                echo'</a>';
+                                echo'<ul class="dropdown-menu dropdown-menu-end">';
+                                echo'<li><a class="dropdown-item" href="index.php?i=MiPerfil">Mi perfil</a></li>';       
+                                echo'<li><hr class="dropdown-divider"></li>';    
+                                echo'<li><a class="dropdown-item" href="index.php?i=cerrarSesion">Cerrar sesión</a></li>';    
+                                echo'</ul>';
+                                echo'</li>';
+                            
+                            }
+                        }
+                        else{
+                        echo '<button id="openLoginModalBtn" class="btn btn-light"><b>Iniciar&nbsp;sesión</b></button>';        
+                        }
+                ?>
 
                     <!-- Modal de Login -->
                     <div id="loginModal" class="modal">
@@ -89,21 +116,18 @@
                             </tr>
                             <tr>
                                 <td style="width: 50%;">
-                                <form>
+                                <form action=""> 
                                     <div class="mb-3">
                                     <label for="LogEmail" class="form-label"><b>Correo</b></label>
-                                    <input type="email" class="form-control" id="LogEmail" aria-describedby="emailHelp" placeholder="Ingresa tu correo">
+                                    <input type="text" class="form-control" id="LogEmail" name="Username" aria-describedby="emailHelp" placeholder="Ingresa tu correo">
                                     <div id="emailHelp" class="form-text">Por tu seguridad, no compartas tu cuenta con nadie mas.</div>
                                     </div>
                                     <div class="mb-3">
                                     <label for="LogPassword" class="form-label"><b>Contraseña</b></label>
-                                    <input type="password" class="form-control" id="LogPassword" placeholder="Ingresa tu contraseña">
+                                    <input type="password" class="form-control" id="LogPassword" name="password" placeholder="Ingresa tu contraseña">
                                     </div>
-                                    <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="LogRemind">
-                                    <label class="form-check-label" for="LogRemind"><b>Recordarme</b></label>
-                                    </div>
-                                    <button type="submit" class="btn btn-success">Iniciar sesión</button>
+                                    <input type="submit" class="btn btn-success" value="Enviar">
+                                    <input type="hidden" name="i" value="autenticar">
                                 </form><br>
                                 </td>
                             </tr>
@@ -150,33 +174,27 @@
                             </tr>
                             <tr>
                                 <td style="width: 50%;">
-                                <form>
+                                <form action=""> 
                                     <div class="mb-3">
-                                    <label for="Nombre" class="form-label"><b>Nombre(s)</b></label>
-                                    <input class="form-control" type="text" placeholder="Ingresa tu nombre" id="Nombre">
-                                    </div>
-                                    <div class="mb-3">
-                                    <label for="Apellidos" class="form-label"><b>Apellido(s)</b></label>
-                                    <input class="form-control" type="text" placeholder="Ingresa tus apellidos" id="Apellidos">
+                                    <label for="LogEmail" class="form-label"><b>Correo</b></label>
+                                    <input type="text" class="form-control" id="LogEmail1" name="Username1" placeholder="Ingresa tu correo">
                                     </div>
                                     <div class="mb-3">
-                                    <label for="Email" class="form-label"><b>Correo</b></label>
-                                    <input type="email" class="form-control" id="Email" placeholder="Ingresa tu correo">
+                                    <label for="LogEmail" class="form-label"><b>Confirmar Correo</b></label>
+                                    <input type="text" class="form-control" id="LogEmail2" name="Username2" placeholder="Ingresa tu correo">
                                     </div>
                                     <div class="mb-3">
-                                    <label for="Password" class="form-label"><b>Contraseña</b></label>
-                                    <input type="password" class="form-control" id="Password" placeholder="Ingresa tu contraseña">
+                                    <label for="LogPassword" class="form-label"><b>Contraseña</b></label>
+                                    <input type="password" class="form-control" id="LogPassword1" name="password1" placeholder="Ingresa tu contraseña">
                                     </div>
                                     <div class="mb-3">
-                                    <label for="PasswordCon" class="form-label"><b>Confirmar contraseña</b></label>
-                                    <input type="password" class="form-control" id="PasswordCon" placeholder="Confirma tu contraseña">
+                                    <label for="LogPassword" class="form-label"><b>Confirmar Contraseña</b></label>
+                                    <input type="password" class="form-control" id="LogPassword2" name="password2" placeholder="Ingresa tu contraseña">
                                     </div>
-                                    <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="Terms">
-                                    <label class="form-check-label" for="Terms"><b>Estoy de acuerdo con los <a href="#">Terminos y condiciones</a></b></label>
-                                    </div>
-                                    <button type="submit" class="btn btn-success">Registrarte</button>
+                                    <input type="submit" class="btn btn-success" value="Registrarse">
+                                    <input type="hidden" name="i" value="guardarRegistro">
                                 </form> <br>
+
                                 </td>
                             </tr>
                             <tr class="box-centrado">

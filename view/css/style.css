@@ -5,6 +5,24 @@ body{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  
+}
+
+.contenedor{
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  width: 100%;
+  background-color: #2b824b;
+  border-radius: 50px;
+}
+
+.perfiles{
+  margin-right: 5%;
+}
+.perfiles2{
+  margin-left: 5%;
 }
 
 .container img{

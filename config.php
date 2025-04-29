@@ -1,3 +1,3 @@
 <?php
-    define("urlsite",'http://localhost/ejemplomvc');
+    define("urlsite",'http://localhost/MetaphoraBeta/');
 ?>

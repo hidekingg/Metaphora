@@ -6,6 +6,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const openRegisterFromLogin = document.getElementById('openRegisterFromLogin');
     const openLoginFromRegister = document.getElementById('openLoginFromRegister');
     const closeButtons = document.querySelectorAll('.close-modal, .close-modal-img');
+    const registerForm = registerModal.querySelector('form'); // Seleccionar el formulario de registro
+    
+    // Validación del formulario de registro
+    registerForm.onsubmit = function(e) {
+        const email1 = document.getElementById('LogEmail1').value;
+        const email2 = document.getElementsByName('Username2')[0].value;
+        const pass1 = document.getElementById('LogPassword1').value;
+        const pass2 = document.getElementsByName('password2')[0].value;
+        
+        // Validar que los correos coincidan
+        if(email1 !== email2) {
+            alert('Los correos electrónicos no coinciden');
+            e.preventDefault();
+            return false;
+        }
+        
+        // Validar que las contraseñas coincidan
+        if(pass1 !== pass2) {
+            alert('Las contraseñas no coinciden');
+            e.preventDefault();
+            return false;
+        }
+        
+        return true;
+    };
     
     // Abrir modal de login
     openLoginBtn.onclick = function() {
