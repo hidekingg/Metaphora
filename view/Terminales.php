@@ -7,12 +7,32 @@
         <img src="view/img/BannerMini.png" alt="..." width="70%">
     </div>
 
+<!--_________________________________________________________________-->
+
     <div class="Titular">
         <h2>Terminales!</h2>
         <center><hr width="30%"></center>
     </div>
 
-    <center><iframe src="https://www.google.com/maps/d/embed?mid=13OsRXD2C9TD15vBj3NunZRwriHHt0ro&hl=es-419&ehbc=2E312F" width="70%" height="550"></iframe></iframe></center>   
+    <div id="map"></div>
+
+    <script>
+    // Inicializa el array fuera del bucle
+    const branches = [
+    <?php foreach ($data as $MapTerminal):?>,
+        {
+            name: "<?= $MapTerminal['Nombre'] ?>",
+            image: "<?= $MapTerminal['ImgTerminal'] ?>",
+            address: "<?= $MapTerminal['DireccionCompleta'] ?>",
+            coords: [<?= $MapTerminal['Coordenadas'] ?>]
+        },
+    <?php endforeach; ?>
+    ];
+    </script>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="main.js">
+    </script> 
 
 </main>
 

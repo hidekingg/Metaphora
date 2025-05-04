@@ -6,12 +6,16 @@
     <link rel="stylesheet" href="view/css/style.css">
     <link rel="stylesheet" href="view/css/EsModal.css">
     <link rel="stylesheet" href="view/css/viaje.css">
+    <link rel="stylesheet" href="view/css/map.css">
     <link rel="stylesheet" type="text/css" href="view/Boostrap/bootstrap.min.css">
     <script type="text/javascript" src="view/Boostrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="view/Boostrap/js/bootstrap.bundle.min.js"></script>
+    <script defer src="view/js/terminal.js"></script>
     <script defer src="view/js/main.js"></script>
     <script defer src="view/js/viaje.js"></script>
     <link rel="icon" href="view/img/logo.ico">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="style.css">
     <?php
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
@@ -22,16 +26,16 @@
     
     <header>
 
-    <nav class="navbar navbar-expand">
+    <nav class="navbar navbar-expand fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php?i=index" >
-                <img src="view/img/MlogoN.png" alt="Metaphora" width="15%" height="10%">
+                <img src="view/img/MlogoN.png" alt="Metaphora" class="navbar-logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarScroll">
+            <ul class="navbar-nav align-items-center" style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="index.php?i=Promociones">Promociones</a>
                 </li>
@@ -69,7 +73,7 @@
                         }
                         else{
                                 echo'<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">';
-                                echo'<img src="'.$_SESSION['FotoPerfil'].'" alt="Perfil" class="profile-img" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">';
+                                echo'<img src="'.$_SESSION['FotoPerfil'].'" alt="Perfil" class="profile-img" style="width: 45px; height: 45px; border-radius: 50%; outline: 4px solid #E8F0DE; object-fit: cover;">';
                                 echo'</a>';
                                 echo'<ul class="dropdown-menu dropdown-menu-end">';
                                 echo'<li><a class="dropdown-item" href="index.php?i=MiPerfil">Mi perfil</a></li>';       

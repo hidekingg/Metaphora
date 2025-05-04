@@ -1,73 +1,86 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Configuración del selector de fecha
-    const fechaInput = document.getElementById('fecha');
-    const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0');
-    const yyyy = today.getFullYear();
-    const minDate = yyyy + '-' + mm + '-' + dd;
-    fechaInput.setAttribute('min', minDate);
-    fechaInput.value = minDate;
+    // =============================================
+    // CONFIGURACIÓN INICIAL DE FECHA
+    // =============================================
+    const inputFecha = document.getElementById('fecha');
+    const hoy = new Date();
+    const dia = String(hoy.getDate()).padStart(2, '0');
+    const mes = String(hoy.getMonth() + 1).padStart(2, '0');
+    const año = hoy.getFullYear();
+    const fechaMinima = año + '-' + mes + '-' + dia;
+    inputFecha.setAttribute('min', fechaMinima);
+    inputFecha.value = fechaMinima;
     
-    // Control del desplegable de pasajeros
-    const passengerTrigger = document.getElementById('passengerTrigger');
-    const passengerDropdown = document.getElementById('passengerDropdown');
+    // =============================================
+    // CONTROL DEL DESPLEGABLE DE PASAJEROS
+    // =============================================
+    const disparadorPasajeros = document.getElementById('disparadorPasajeros');
+    const desplegablePasajeros = document.getElementById('desplegablePasajeros');
     
-    passengerTrigger.addEventListener('click', function(e) {
+    // Mostrar/ocultar desplegable al hacer clic
+    disparadorPasajeros.addEventListener('click', function(e) {
         e.stopPropagation();
-        passengerDropdown.classList.toggle('show');
+        desplegablePasajeros.classList.toggle('mostrar');
     });
     
-    // Cerrar el desplegable al hacer clic fuera
+    // Cerrar desplegable al hacer clic fuera
     document.addEventListener('click', function() {
-        passengerDropdown.classList.remove('show');
+        desplegablePasajeros.classList.remove('mostrar');
     });
     
-    // Evitar que el clic dentro del desplegable lo cierre
-    passengerDropdown.addEventListener('click', function(e) {
+    // Evitar que se cierre al hacer clic dentro
+    desplegablePasajeros.addEventListener('click', function(e) {
         e.stopPropagation();
     });
     
-    // Controladores para los botones de pasajeros
-    document.querySelectorAll('.passenger-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const type = this.getAttribute('data-type');
-            const isPlus = this.classList.contains('plus');
-            const valueElement = document.getElementById(`${type}-value`);
-            const inputElement = document.getElementById(type);
-            let value = parseInt(valueElement.textContent);
+    // =============================================
+    // CONTROLADORES PARA LOS BOTONES DE PASAJEROS
+    // =============================================
+    document.querySelectorAll('.boton-pasajero').forEach(boton => {
+        boton.addEventListener('click', function() {
+            const tipo = this.getAttribute('data-tipo');
+            const esSuma = this.classList.contains('mas');
+            const elementoValor = document.getElementById(`valor${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`);
+            const elementoInput = document.getElementById(tipo);
+            let valor = parseInt(elementoValor.textContent);
             
-            if (isPlus) {
-                value++;
+            // Actualizar valor
+            if (esSuma) {
+                valor++;
             } else {
-                value = Math.max(0, value - 1);
+                valor = Math.max(0, valor - 1);
             }
             
-            valueElement.textContent = value;
-            inputElement.value = value;
+            // Actualizar DOM
+            elementoValor.textContent = valor;
+            elementoInput.value = valor;
             
-            updatePassengerSummary();
+            actualizarResumenPasajeros();
         });
     });
     
-    function updatePassengerSummary() {
+    // =============================================
+    // FUNCIÓN PARA ACTUALIZAR EL RESUMEN DE PASAJEROS
+    // =============================================
+    function actualizarResumenPasajeros() {
         const adultos = parseInt(document.getElementById('adultos').value);
         const ninos = parseInt(document.getElementById('ninos').value);
         const inapam = parseInt(document.getElementById('inapam').value);
         const total = adultos + ninos + inapam;
         
-        let summaryText = total + ' pasajero' + (total !== 1 ? 's' : '');
+        let textoResumen = total + ' pasajero' + (total !== 1 ? 's' : '');
         if (total > 0) {
-            summaryText += ' (';
-            const parts = [];
-            if (adultos > 0) parts.push(adultos + ' Adulto' + (adultos !== 1 ? 's' : ''));
-            if (ninos > 0) parts.push(ninos + ' Niño' + (ninos !== 1 ? 's' : ''));
-            if (inapam > 0) parts.push(inapam + ' INAPAM');
-            summaryText += parts.join(', ') + ')';
+            textoResumen += ' (';
+            const partes = [];
+            if (adultos > 0) partes.push(adultos + ' Adulto' + (adultos !== 1 ? 's' : ''));
+            if (ninos > 0) partes.push(ninos + ' Niño' + (ninos !== 1 ? 's' : ''));
+            if (inapam > 0) partes.push(inapam + ' INAPAM');
+            textoResumen += partes.join(', ') + ')';
         }
         
-        document.getElementById('passengerSummary').textContent = summaryText;
+        document.getElementById('resumenPasajeros').textContent = textoResumen;
     }
+});
     
     // Ejemplo de cómo cargar datos dinámicamente
     /*
@@ -87,4 +100,3 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     */
-});

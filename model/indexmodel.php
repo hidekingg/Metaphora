@@ -162,4 +162,40 @@ class Viajes {
         return $resultado->fetchAll(PDO::FETCH_ASSOC); // Asegúrate de usar fetchAll
     }
 }
+
+class MapaTerminales{
+    private $listaMapaTerminales;
+
+    public function __construct() {
+        $this->listaMapaTerminales = array();
+    }
+    public function mostrarMapaTerminales(){
+        include_once("conexion.php");
+        $cnn = new Conexion();
+        
+        $consulta = "SELECT 
+            t.Nombre, 
+            t.ImgTerminal, 
+            t.Coordenadas, 
+            CONCAT(
+                t.Direccion,', ',
+                t.CP,', ',
+                m.Nombre,', ',
+                e.Nombre,', ',
+                p.Nombre
+            ) AS DireccionCompleta 
+        FROM 
+            `terminal` t
+        LEFT JOIN 
+            `municipio` m ON t.`Municipio` = m.`IdMunicipio`
+        LEFT JOIN 
+            `estado` e ON m.`IdEstado` = e.`IdEstado`
+        LEFT JOIN 
+            `pais` p ON e.`IdPais` = p.`IdPais`;";
+        
+        $resultado = $cnn->prepare($consulta);
+        $resultado->execute();
+        return $resultado->fetchAll(PDO::FETCH_ASSOC); // Devuelve directamente todos los resultados
+    }
+}
 ?>

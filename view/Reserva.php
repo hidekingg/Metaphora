@@ -13,72 +13,72 @@
     
     
 
-    <form id="searchForm" action="" class="search-form">
+    <form id="formularioBusqueda" action="" class="formulario-busqueda">
         <!-- Tipo de viaje -->
-        <div class="form-group">
-            <label for="tipo-viaje">Tipo de viaje</label>
-            <select id="tipo-viaje" name="tipo_viaje">
+        <div class="grupo-formulario">
+            <label for="tipoViaje">Tipo de viaje</label>
+            <select id="tipoViaje" name="tipo_viaje">
                 <option value="1">Directo</option>
                 <option value="2">Redondo</option>
             </select>
         </div>
 
-        <div class="divider"></div>
+        <div class="divisor"></div>
 
         <!-- Selector de pasajeros desplegable -->
-        <div class="form-group passenger-selector">
+        <div class="grupo-formulario selector-pasajeros">
             <label>Pasajeros</label>
-            <div class="passenger-trigger" id="passengerTrigger">
-                <span class="passenger-trigger-text" id="passengerSummary">0 pasajeros</span>
+            <div class="disparador-pasajeros" id="disparadorPasajeros">
+                <span class="texto-disparador-pasajeros" id="resumenPasajeros">0 pasajeros</span>
                 <span>▼</span>
             </div>
             
-            <div class="passenger-dropdown" id="passengerDropdown">
-                <div class="passenger-type">
-                    <div class="passenger-label">
+            <div class="desplegable-pasajeros" id="desplegablePasajeros">
+                <div class="tipo-pasajero">
+                    <div class="etiqueta-pasajero">
                         Adulto(s)
                         <small>Más de 12 años</small>
                     </div>
-                    <div class="passenger-count">
-                        <button type="button" class="passenger-btn minus" data-type="adultos">-</button>
-                        <span class="passenger-value" id="adultos-value">0</span>
-                        <button type="button" class="passenger-btn plus" data-type="adultos">+</button>
+                    <div class="contador-pasajeros">
+                        <button type="button" class="boton-pasajero menos" data-tipo="adultos">-</button>
+                        <span class="valor-pasajero" id="valorAdultos">0</span>
+                        <button type="button" class="boton-pasajero mas" data-tipo="adultos">+</button>
                         <input type="hidden" id="adultos" name="adultos" value="0">
                     </div>
                 </div>
                 
-                <div class="passenger-type">
-                    <div class="passenger-label">
+                <div class="tipo-pasajero">
+                    <div class="etiqueta-pasajero">
                         Niño(s)
                         <small>5 a 12 años</small>
                     </div>
-                    <div class="passenger-count">
-                        <button type="button" class="passenger-btn minus" data-type="ninos">-</button>
-                        <span class="passenger-value" id="ninos-value">0</span>
-                        <button type="button" class="passenger-btn plus" data-type="ninos">+</button>
+                    <div class="contador-pasajeros">
+                        <button type="button" class="boton-pasajero menos" data-tipo="ninos">-</button>
+                        <span class="valor-pasajero" id="valorNinos">0</span>
+                        <button type="button" class="boton-pasajero mas" data-tipo="ninos">+</button>
                         <input type="hidden" id="ninos" name="ninos" value="0">
                     </div>
                 </div>
                 
-                <div class="passenger-type">
-                    <div class="passenger-label">
+                <div class="tipo-pasajero">
+                    <div class="etiqueta-pasajero">
                         INAPAM
                         <small>Con credencial vigente</small>
                     </div>
-                    <div class="passenger-count">
-                        <button type="button" class="passenger-btn minus" data-type="inapam">-</button>
-                        <span class="passenger-value" id="inapam-value">0</span>
-                        <button type="button" class="passenger-btn plus" data-type="inapam">+</button>
+                    <div class="contador-pasajeros">
+                        <button type="button" class="boton-pasajero menos" data-tipo="inapam">-</button>
+                        <span class="valor-pasajero" id="valorInapam">0</span>
+                        <button type="button" class="boton-pasajero mas" data-tipo="inapam">+</button>
                         <input type="hidden" id="inapam" name="inapam" value="0">
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="divider"></div>
+        <div class="divisor"></div>
         
         <!-- Origen y Destino -->
-        <div class="form-group">
+        <div class="grupo-formulario">
             <label for="origen">Origen</label>
             <select id="origen" name="origen" required>
                 <option value="">Desde donde viajas</option>
@@ -93,7 +93,7 @@
             </select>
         </div>
         
-        <div class="form-group">
+        <div class="grupo-formulario">
             <label for="destino">Destino</label>
             <select id="destino" name="destino" required>
                 <option value="">Hacia donde viajas</option>
@@ -108,15 +108,15 @@
             </select>
         </div>
         
-        <div class="divider"></div>
+        <div class="divisor"></div>
         
         <!-- Fecha -->
-        <div class="form-group">
+        <div class="grupo-formulario">
             <label for="fecha">Fecha</label>
             <input type="date" id="fecha" name="fecha" required>
         </div>
         <br>
-        <input type="submit" class="btn btn-success" value="Buscas viaje">
+        <input type="submit" class="btn btn-success" value="Buscar viaje">
         <input type="hidden" name="i" value="MandarViajes">
     </form>
 

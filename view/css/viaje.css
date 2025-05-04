@@ -1,9 +1,14 @@
+/* Estilos generales para el título */
 h1 {
     color: #2c3e50;
     text-align: center;
     margin-bottom: 30px;
 }
-.search-form {
+
+/* Estilos del formulario de búsqueda */
+.formulario-busqueda {
+    justify-content: center;
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
@@ -13,26 +18,36 @@ h1 {
     border-radius: 8px;
     position: relative;
 }
-.form-group {
+
+/* Estilos para cada grupo de campos del formulario */
+.grupo-formulario {
     display: flex;
     flex-direction: column;
     min-width: 150px;
 }
+
+/* Estilos para las etiquetas */
 label {
     font-weight: bold;
     margin-bottom: 5px;
     font-size: 14px;
 }
+
+/* Estilos para selects e inputs */
 select, input {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 14px;
 }
-.passenger-selector {
+
+/* Estilos para el selector de pasajeros */
+.selector-pasajeros {
     position: relative;
 }
-.passenger-trigger {
+
+/* Estilos para el disparador del selector de pasajeros */
+.disparador-pasajeros {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -42,10 +57,14 @@ select, input {
     justify-content: space-between;
     align-items: center;
 }
-.passenger-trigger-text {
+
+/* Estilos para el texto del disparador */
+.texto-disparador-pasajeros {
     font-size: 14px;
 }
-.passenger-dropdown {
+
+/* Estilos para el desplegable de pasajeros */
+.desplegable-pasajeros {
     position: absolute;
     top: 100%;
     left: 0;
@@ -59,31 +78,45 @@ select, input {
     z-index: 100;
     display: none;
 }
-.passenger-dropdown.show {
+
+/* Clase para mostrar el desplegable */
+.desplegable-pasajeros.mostrar {
     display: block;
 }
-.passenger-type {
+
+/* Estilos para cada tipo de pasajero */
+.tipo-pasajero {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
 }
-.passenger-type:last-child {
+
+/* Eliminar margen del último tipo de pasajero */
+.tipo-pasajero:last-child {
     margin-bottom: 0;
 }
-.passenger-label {
+
+/* Estilos para la etiqueta del pasajero */
+.etiqueta-pasajero {
     font-size: 14px;
 }
-.passenger-label small {
+
+/* Estilos para el texto pequeño de la etiqueta */
+.etiqueta-pasajero small {
     display: block;
     color: #666;
     font-size: 12px;
 }
-.passenger-count {
+
+/* Estilos para el contador de pasajeros */
+.contador-pasajeros {
     display: flex;
     align-items: center;
 }
-.passenger-btn {
+
+/* Estilos para los botones de pasajeros */
+.boton-pasajero {
     width: 25px;
     height: 25px;
     border: 1px solid #ddd;
@@ -95,15 +128,21 @@ select, input {
     justify-content: center;
     font-weight: bold;
 }
-.passenger-btn:hover {
+
+/* Efecto hover para los botones */
+.boton-pasajero:hover {
     background-color: #eee;
 }
-.passenger-value {
+
+/* Estilos para el valor del contador */
+.valor-pasajero {
     margin: 0 10px;
     min-width: 20px;
     text-align: center;
 }
-.search-btn {
+
+/* Estilos para el botón de búsqueda */
+.boton-busqueda {
     background-color: #106d1c;
     color: white;
     border: none;
@@ -114,10 +153,14 @@ select, input {
     height: 40px;
     transition: background-color 0.3s;
 }
-.search-btn:hover {
+
+/* Efecto hover para el botón de búsqueda */
+.boton-busqueda:hover {
     background-color: #76be88;
 }
-.divider {
+
+/* Estilos para el divisor entre secciones */
+.divisor {
     border-left: 1px solid #ccc;
     height: 60px;
     margin: 0 10px;

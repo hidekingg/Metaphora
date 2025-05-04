@@ -69,3 +69,55 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
+
+  // JavaScript para el hover en los dropdowns
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdowns = document.querySelectorAll('.nav-item.dropdown');
+  
+  dropdowns.forEach(dropdown => {
+      const link = dropdown.querySelector('.dropdown-toggle');
+      const menu = dropdown.querySelector('.dropdown-menu');
+      
+      // Mostrar al pasar el mouse
+      dropdown.addEventListener('mouseenter', function() {
+          const bsDropdown = bootstrap.Dropdown.getInstance(link);
+          if (!bsDropdown) {
+              new bootstrap.Dropdown(link).show();
+          } else {
+              bsDropdown.show();
+          }
+      });
+      
+      // Ocultar al salir del elemento (con retardo para mejor experiencia)
+      dropdown.addEventListener('mouseleave', function(e) {
+          // Verificar si el mouse se movió a otro elemento del dropdown
+          if (!dropdown.contains(e.relatedTarget)) {
+              setTimeout(() => {
+                  const bsDropdown = bootstrap.Dropdown.getInstance(link);
+                  if (bsDropdown) {
+                      bsDropdown.hide();
+                  }
+              }, 200); // Pequeño retardo para evitar cierre accidental
+          }
+      });
+      
+      // Mantener abierto si el mouse está en el menú
+      menu.addEventListener('mouseenter', function() {
+          const bsDropdown = bootstrap.Dropdown.getInstance(link);
+          if (bsDropdown) {
+              bsDropdown.show();
+          }
+      });
+      
+      menu.addEventListener('mouseleave', function(e) {
+          if (!menu.contains(e.relatedTarget)) {
+              setTimeout(() => {
+                  const bsDropdown = bootstrap.Dropdown.getInstance(link);
+                  if (bsDropdown) {
+                      bsDropdown.hide();
+                  }
+              }, 200);
+          }
+      });
+  });
+});

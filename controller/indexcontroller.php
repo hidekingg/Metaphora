@@ -96,6 +96,8 @@ class indexcontroller{
 
     public static function Terminales()
     {
+        $indexmodel=new MapaTerminales();
+        $data = $indexmodel->mostrarMapaTerminales();
         require_once("view/Terminales.php");
     }
 

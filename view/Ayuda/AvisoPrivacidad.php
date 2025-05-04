@@ -49,7 +49,7 @@
         <p style="text-align: justify;">Sus datos personales podrán ser compartidos con autoridades competentes cuando exista requerimiento legal, así como con proveedores de servicios necesarios para la operación de nuestra empresa.</p>
 
         <h3>7. Modificaciones al aviso</h3>
-        <p style="text-align: justify;">"METAPHORA" se reserva el derecho de modificar este aviso de privacidad. Las actualizaciones se publicarán en nuestro sitio web www.metaphora.com.mx</p>
+        <p style="text-align: justify;">"METAPHORA" se reserva el derecho de modificar este aviso de privacidad. Las actualizaciones se publicarán en nuestro sitio web http://metaphora.infy.uk</p>
 
         <p style="text-align: justify;">Fecha de última actualización: 28/04/2025</p>
     </div>
